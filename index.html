@@ -16,13 +16,40 @@
     </div>
     <main class="main container">
       <button class="add-button">+ Add Books</button>
-      <div class="cards">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-      </div>
+      <div class="cards"></div>
     </main>
     <div class="footer"><p>Copyright @ 2023 Manik</p></div>
+    <dialog id="dialog">
+      <form>
+        <legend>Add new Book</legend>
+        <input
+          type="text"
+          placeholder="Title"
+          id="title"
+          name="title"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Author"
+          id="author"
+          name="author"
+          required
+        />
+        <input
+          type="number"
+          placeholder="Pages"
+          id="pages"
+          name="pages"
+          required
+        />
+        <div>
+          <input type="checkbox" id="isRead" name="isRead" />
+          <label for="isRead">Have you read it?</label>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="cancel">Cancel</button>
+      </form>
+    </dialog>
   </body>
 </html>

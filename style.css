@@ -5,11 +5,13 @@
 }
 body {
   background-color: #f0eef1;
+  position: relative;
 }
 button {
-  padding: 10px 20px;
+  padding: 15px 30px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: none;
+  font-size: 18px;
 }
 
 .header {
@@ -36,12 +38,13 @@ button {
 }
 
 .add-button {
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: 900;
 }
 .cards {
   display: grid;
   height: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-items: center;
   padding: 20px;
@@ -51,9 +54,21 @@ button {
 .card {
   background-color: white;
   width: 350px;
-  min-height: 200px;
+  height: 300px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+}
+.read {
+  background-color: #9fff9c;
+}
+.not-read {
+  background-color: #ff9c9c;
 }
 .footer {
   background-color: white;
@@ -64,4 +79,49 @@ button {
 }
 .footer p {
   font-size: 20px;
+}
+dialog {
+  position: absolute;
+  background-color: #f0eef1;
+  margin: 30vh auto;
+  width: 350px;
+  height: 460px;
+  border: none;
+  border-radius: 10px;
+}
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+form legend {
+  font-size: 28px;
+  font-weight: 900;
+}
+input {
+  width: 100%;
+  font-size: 22px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+#submit,
+#cancel {
+  background-color: #9fff9c;
+  width: 100%;
+  font-size: 22px;
+  padding: 10px 20px;
+  border: none;
+}
+#cancel {
+  background-color: #ff9c9c;
+}
+.card button {
+  width: 100%;
+  font-size: 18px;
+}
+button:hover {
+  filter: brightness(90%);
 }
