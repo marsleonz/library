@@ -20,7 +20,7 @@
     </main>
     <div class="footer"><p>Copyright @ 2023 Manik</p></div>
     <dialog id="dialog">
-      <form>
+      <form novalidate>
         <legend>Add new Book</legend>
         <input
           type="text"
@@ -29,6 +29,7 @@
           name="title"
           required
         />
+        <div id="errorTitle" class="error-message"></div>
         <input
           type="text"
           placeholder="Author"
@@ -36,6 +37,7 @@
           name="author"
           required
         />
+        <div id="errorAuthor" class="error-message"></div>
         <input
           type="number"
           placeholder="Pages"
@@ -43,6 +45,7 @@
           name="pages"
           required
         />
+        <div id="errorPages" class="error-message"></div>
         <div>
           <input type="checkbox" id="isRead" name="isRead" />
           <label for="isRead">Have you read it?</label>

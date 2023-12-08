@@ -125,3 +125,9 @@ input {
 button:hover {
   filter: brightness(90%);
 }
+.error-message {
+  display: none;
+}
+.error-active {
+  display: block;
+}

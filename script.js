@@ -82,14 +82,44 @@ const cancelBtn = document.getElementById("cancel");
 cancelBtn.addEventListener("click", () => {
   dialog.close();
 });
-
-const submitBtn = document.getElementById("submit");
-submitBtn.addEventListener("click", (e) => {
+function displayError(input, errorElement) {
+  errorElement.textContent = input.validationMessage
+    ? input.validationMessage
+    : "";
+  input.validationMessage
+    ? errorElement.classList.add("error-active")
+    : errorElement.classList.remove("error-active");
+}
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const bookTitle = document.getElementById("title");
   const bookAuthor = document.getElementById("author");
   const bookPages = document.getElementById("pages");
   const bookIsRead = document.getElementById("isRead");
+
+  const errorTitle = document.getElementById("errorTitle");
+  const errorAuthor = document.getElementById("errorAuthor");
+  const errorPages = document.getElementById("errorPages");
+
+  displayError(bookTitle, errorTitle);
+  displayError(bookAuthor, errorAuthor);
+  displayError(bookPages, errorPages);
+
+  if (!form.checkValidity()) {
+    // Display custom error messages for invalid fields
+    bookTitle.reportValidity();
+    bookAuthor.reportValidity();
+    bookPages.reportValidity();
+    return;
+  }
+
+  // Clear error messages if the form is valid
+
+  errorTitle.textContent = "";
+  errorAuthor.textContent = "";
+  errorPages.textContent = "";
+
   library.addBookToLibrary(
     bookTitle.value,
     bookAuthor.value,
